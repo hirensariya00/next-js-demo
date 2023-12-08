@@ -298,6 +298,7 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
                                                 className="heroSlideImage"
                                                 suppressHydrationWarning={true}>
                                                 <Image
+                                                    priority={true}
                                                     src={getImageUrl(data)}
                                                     width={1920}
                                                     height={600}
