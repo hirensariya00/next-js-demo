@@ -1,0 +1,103 @@
+
+.gjs-f-b1 {
+   &.hero-carousel-widget {      
+        &:before {        
+            background-image: url('../images/Hero-thumbnail.png');      
+        }    
+    };
+    &.cta-layout-widget {      
+       &:before {        
+           background-image: url('../images/CTA-thumbnail.png');      
+       }    
+   };
+   &.cta-layout-widget-2 {      
+        &:before {        
+            background-image: url('../images/cta-layout-2.png');      
+        }    
+};
+    &.logo-slider {      
+       &:before {        
+           background-image: url('../images/logo-slider.png');      
+       }    
+   };
+    &.product-card-with-title-image {      
+       &:before {        
+           background-image: url('../images/product-card-with-title-image.png');      
+       }    
+   };
+    &.zig-zag-layout-1 {      
+       &:before {        
+           background-image: url('../images/ZigZag-thumbnail.png');      
+       }    
+   };
+   &.zig-zag-layout-2 {      
+    &:before {        
+        background-image: url('../images/zig-zag-layout-2.png');      
+    }    
+  };
+    &.product-card-image-demo-theme{      
+       &:before {        
+           background-image: url('../images/product-set-thumbnail.png');      
+       }    
+   };
+    &.brand-logo {      
+       &:before {        
+           background-image: url('../images/Brand-logo-thumbnail.png');      
+       }    
+   };
+    &.collage-layout-1 {      
+       &:before {        
+           background-image: url('../images/grid-component.png');      
+       }    
+   };
+   &.collage-layout-2 {      
+        &:before {        
+            background-image: url('../images/image-collage.png');      
+        }    
+    };
+    &.collage-layout-3 {      
+        &:before {        
+            background-image: url('../images/Collage-layout-3.png');      
+        }    
+    };
+    &.usp-layout-1 {      
+       &:before {        
+           background-image: url('../images/USP-thumbnail.png');     
+       }    
+   };
+   &.product-card-with-title-image-v1 {      
+        &:before {        
+            background-image: url('../images/product-card-with-title-image-v1.png');     
+        }    
+    };
+    &.product-card-with-title-image-v2 {      
+        &:before {        
+            background-image: url('../images/product-card-with-title-image-v2.png');     
+        }    
+    };
+    &.two-col-grid {      
+        &:before {        
+            background-image: url('../images/two-col-grid.png');     
+        }    
+    };
+    &.five-col-grid {      
+        &:before {        
+            background-image: url('../images/five-col-grid.png');     
+        }    
+    };
+    &.product-category-v1 {      
+        &:before {        
+            background-image: url('../images/Product-category-v1.png');     
+        }    
+    };
+    &.product-category-v2 {      
+        &:before {        
+            background-image: url('../images/Product-category-v2.png');     
+        }    
+    };
+    &.accordion-block {      
+        &:before {        
+            background-image: url('../images/accordion-block.png');     
+        }    
+    };
+}

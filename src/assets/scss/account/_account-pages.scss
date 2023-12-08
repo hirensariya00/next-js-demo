@@ -1,0 +1,164 @@
+.signup-link {
+  margin-left: 8px;
+  padding-left: 10px;
+  position: relative;
+
+  &::before {
+    content: "/";
+    left: 0;
+    top: 0;
+    position: absolute;
+    color: var(--border-color);
+    line-height: 1.4;
+  }
+}
+
+//Account Pages CSS
+.account {
+  width: 70%;
+  margin: 0 auto;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  .navbar {
+    .navbar-item {
+      margin: 0 12px;
+      display: inline-block;
+
+      @include small {
+        margin-bottom: 5px;
+      }
+    }
+
+    .navbar-action {
+      position: relative;
+      font-size: var(--para-16);
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: all .2s linear;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:hover {
+        color: var(--primary-color);
+
+        &::after {
+          width: 100%;
+          transition: all .2s linear;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    .is-active {
+      .navbar-action {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .form-fieldset {
+    .form-field {
+      margin-bottom: 30px;
+
+      &:last-child {
+        @include small {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+//alertbox
+.alertbox {
+  background: var(--alert-info-bg);
+  color: var(--secondary-color);
+  display: table;
+  padding: 16px 26px;
+  margin: 24px auto;
+
+  p {
+    font-size: var(--para-16);
+  }
+
+  .alertbox-icon {
+    display: table-cell;
+    padding-right: 20px;
+  }
+}
+
+//account-heading
+.account-heading {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+//Loader
+.account-body {
+  position: relative;
+
+  .loading-section {
+    background-color: hsla(0, 0%, 100%, .7);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 1;
+  }
+
+  .is-loading {
+    display: block;
+  }
+}
+
+//For Account Full Width
+.account-fullwidth {
+  width: 100%;
+}
+
+//Button spacing
+.table-actions,
+.form-actions {
+  .button {
+    @include small {
+      display: block;
+      margin: 0;
+      width: 100%;
+    }
+
+    +.button {
+      @include mobile {
+        margin-left: 20px;
+      }
+
+      @include small {
+        margin-left: 0;
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+.account-page-heading {
+  @include medium {
+    font-size: 24px;
+  }
+}

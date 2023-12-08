@@ -1,0 +1,189 @@
+// sass-lint:disable nesting-depth
+
+.hero-carousel-section {
+  position: relative;
+  height: 600px;
+
+  @include x-large {
+    height: 550px;
+  }
+
+  @include large {
+    height: 500px;
+  }
+
+  @include tablet {
+    height: 480px;
+  }
+
+  .loading-section {
+    height: 100%;
+  }
+
+  .slick-slider,
+  .slick-list,
+  .slick-track,
+  .slick-slide>div,
+  .heroSlide {
+    height: 100%;
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 25px;
+    padding: 0 60px;
+    left: 50%;
+    line-height: 0;
+    @include transform(translateX(-50%));
+    margin: 0;
+  }
+
+  .slick-prev {
+    left: 50%;
+    margin-left: -746px;
+
+    @include x-large {
+      margin-left: 0;
+      left: 50px;
+    }
+
+    @include tablet {
+      left: 30px;
+    }
+
+    @include mobile {
+      left: 15px;
+    }
+  }
+
+  .slick-next {
+    right: 50%;
+    margin-right: -746px;
+
+    @include x-large {
+      margin-right: 0;
+      right: 50px;
+    }
+
+    @include tablet {
+      right: 30px;
+    }
+
+    @include mobile {
+      right: 15px;
+    }
+  }
+
+  .heroSlide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .heroSlideImage {
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include tablet {
+        object-position: right;
+      }
+    }
+
+    picture {
+      height: 100%;
+    }
+  }
+
+  .heroSlideContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -47%));
+    z-index: 9;
+    max-height: 100%;
+    width: 100%;
+    max-width: var(--container);
+    overflow: hidden;
+    padding: 0 60px;
+    @include display-flex(flex);
+    flex-flow: column nowrap;
+    @include align-item(center);
+    @include justify-content(center);
+
+    @include mobile {
+      padding: 0 40px;
+      @include transform(translate(-50%, -40%));
+    }
+
+    .heroSlideContentInner {
+      color: var(--white-color);
+      width: 70%;
+      max-width: 90%;
+
+      // padding: 24px;
+      @include mobile {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 24px;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    p {
+      margin: 0;
+      font-size: var(--para-16);
+      color: var(--black-color);
+    }
+
+    .button {
+      +.button {
+        margin-left: 16px;
+
+        @include x-small {
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 16px;
+        }
+      }
+
+      @include x-small {
+        width: 100%;
+      }
+    }
+
+    .button-secondary {
+      margin-top: 32px;
+    }
+  }
+
+  .slick-arrow {
+    width: 16px;
+    height: 34px;
+  }
+}
+
+// BANNER STICKY BUTTON
+.banner-sticky-button {
+  background-color: var(--secondary-color);
+  width: 40px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  @include transform(translateY(-50%));
+
+  img {
+    width: 22px;
+  }
+}

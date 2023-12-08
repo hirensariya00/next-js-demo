@@ -1,0 +1,56 @@
+// global css
+@import 'global';
+
+// header
+@import './header/header';
+
+// footer
+@import './footer/footer';
+
+// cms block
+
+
+// components
+@import "./page-component/breadcrumb";
+@import "./page-component/pagination";
+@import "./page-component/tab";
+@import './page-component/spinner-login';
+@import './page-component/accordion-block';
+
+// page-layout
+@import "./page-layout/page-layout";
+@import "./page-layout/side-bar";
+
+// product cell/card style
+@import "./product/product-card";
+
+// account
+@import "./account/account-pages";
+@import "./account/addresses";
+@import "./account/wishlist";
+@import "./account/messages";
+@import "./account/orders";
+
+// Cart Page
+@import "./pages/cart-page";
+
+// Compare Page
+@import "./pages/compare-page";
+
+// Maintanance Page
+@import "maintanance-page";
+
+// popup/ modal
+@import "popup";
+
+// Blog listing and detail page
+@import "./pages/blog";
+
+// @import "custom";
+@import "two-col-image";
+@import "five-grid-layout";
+@import "product-with-image";
+@import "product_category_card";
+
+// widget images
+@import '../scss/widget_images';

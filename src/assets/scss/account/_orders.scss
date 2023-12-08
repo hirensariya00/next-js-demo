@@ -1,0 +1,218 @@
+.account-list {
+    .ac-orderstatus {
+        float: right;
+
+        @include small {
+            position: absolute;
+            left: 24px;
+            bottom: 0;
+            float: none;
+        }
+
+        .account-orderstatus-label {
+            background-color: var(--account-orderstatus-label);
+            color: var(--white-color);
+            font-size: 12px;
+            padding: 3px 7px;
+
+            @include small {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .account-product-figure {
+        float: left;
+        min-width: 70px;
+        width: 70px;
+    }
+
+    .account-product-body {
+        width: 100%;
+        padding-left: 24px;
+
+        @include small {
+            padding-bottom: 40px;
+        }
+    }
+
+    .account-product-title {
+        margin-bottom: 5px;
+
+        @include x-small {
+            font-size: 14px;
+        }
+
+        span {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--link-hover-color);
+            }
+        }
+    }
+
+    .account-product-detail {
+        width: 25%;
+
+        +.account-product-detail {
+            @include small {
+                margin-top: 10px;
+            }
+        }
+
+        .account-product-detail-heading {
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: var(--body-color);
+        }
+    }
+}
+
+.account-content-small {
+    .account-list {
+        margin-bottom: 0;
+    }
+
+    .account-listshipping {
+        border-bottom: 1px solid var(--border-color);
+        padding: 28px 0;
+
+        @include mobile {
+            padding: 20px 0;
+        }
+
+        h5 {
+            @include x-small {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .account-listitem {
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+    }
+
+    .account-product {
+        padding-left: 32px;
+
+        .account-product-checkitem {
+            width: 16px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            .form-label {
+                padding-left: 0;
+            }
+        }
+
+        .account-product-figure {
+            margin-right: 0;
+        }
+
+        .account-product-body {
+            width: calc(100% - 70px);
+            padding-left: 20px;
+            padding-right: 100px;
+
+            @include x-small {
+                padding-right: 80px;
+            }
+
+            span {
+                color: var(--body-color);
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .definitionlist {
+                font-size: 12px;
+                color: var(--body-color);
+            }
+
+            .prod-definition-key {
+                float: left;
+                @include font-medium;
+            }
+        }
+    }
+
+    .account-ordertotal {
+        float: right;
+        width: 60%;
+        color: var(--body-color);
+
+        @include small {
+            width: 100%;
+        }
+
+        .ordertotal-key {
+            padding: 20px 0;
+            float: left;
+
+            @include small {
+                padding: 16px 0;
+            }
+        }
+
+        .ordertotal-value {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+
+            @include small {
+                padding: 16px 0;
+            }
+
+            &:last-child {
+                color: var(--black-color);
+                border-bottom: 0;
+                font-size: 20px;
+
+                @include small {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.account-sidebar {
+    @include tablet {
+        margin-top: 40px;
+    }
+
+    .sidebar-block {
+        padding-bottom: 0;
+
+        +.sidebar-block {
+            margin-top: 40px;
+
+            @include tablet {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .definitionlist {
+        color: var(--body-color);
+
+        .prod-definition-key {
+            float: left;
+            @include font-medium;
+        }
+    }
+
+    .account-order-address {
+        color: var(--body-color);
+    }
+}
+
+.account-fullwidth {
+    .account-product-body {
+        padding-bottom: 0;
+    }
+}

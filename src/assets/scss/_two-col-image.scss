@@ -1,0 +1,20 @@
+.two-col-image-section{
+    .two-col-image-content{
+        margin-bottom: 32px;
+        @include tablet{
+            margin-bottom: 16px;
+        }
+    }
+    .image-caption{
+        position: absolute;
+        top: 0;
+        padding: 48px;
+        width: 100%;
+        p{
+            color: var(--body-color);
+        }
+        @include x-small{
+            padding: 30px;
+        }
+    }
+}

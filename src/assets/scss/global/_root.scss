@@ -1,0 +1,188 @@
+// sass-lint:disable-all
+
+:root {
+
+  // BODY
+  --body-font: 14px;
+  --body-font-mobile: 14px;
+  --body-line-height: 1.5;
+  --body-background: #FFFFFF;
+  --body-color: #6C6C6C;
+  --body-secondary-color: #000000;
+
+  // FONT
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Source Serif Pro', serif;
+
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+
+  // COLOR
+  --primary-color: #BA8751;
+  --secondary-color: #191919;
+
+  --white-color-rgb: 255, 255, 255;
+  --black-color-rgb: 0, 0, 0;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+  --heading-color: #191919;
+
+  --placeholder-text-color: #AAAAAA;
+  --section-background-color: #fafafa;
+
+  // PARAGRAPH
+  --para-margin: 24px;
+  --para-24: 24px;
+  --para-18: 18px;
+  --para-16: 16px;
+  --para-14: 14px;
+  --para-12: 12px;
+  --para-20: 20px;
+
+  // HEADER
+  --top-bar-bg: #FFEDDB;
+  --top-bar-color: #191919;
+  --header-icon-color: #ffffff;
+
+  --navigation-color: #191919;
+  --navigation-hover-color: #BA8751;
+
+
+  // BORDER COLOR
+  --border-color: #D8D8D8;
+  --dark-border-color: #000000;
+
+  // TOOLTOP
+  --tooltip-bg: #191919;
+  --tooltip-color: #ffffff;
+
+  // LAYOUT
+  --container: 1600px;
+  --gutter-space: 10px;
+  --gutter-space-16: 16px;
+  --gutter-space-tablet: 10px;
+  --gutter-space-24: 24px;
+  --gutter-space-30: 30px;
+
+  --container-small: 1356px;
+
+  // PRODUCT
+  --strike-price-color: #6c6c6c;
+
+  // INPUT
+  --input-bg: #FFF;
+  --input-color: #000000;
+  --input-border: #DDDDDD;
+  --input-line-height: 1.429;
+  --input-padding: 13px 16px;
+  --input-small-padding: 8px 16px;
+  --input-font-size: 14px;
+
+  // CHECKBOX
+  --checkbox-border: #D8D8D8;
+  --checkbox-bg: #BA8751;
+
+  // RADIO
+  --radio-bg: #000000;
+  --radio-swatch-bg: #ffffff;
+  --radio-swatch-border: #D8D8D8;
+  --radio-swatch-selected-border: #000000;
+
+  // LABEL
+  --label-line-height: 1.5;
+  --label-color: #000000;
+  --label-font: 14px;
+
+  // ERROR
+  --required-color: #D32222;
+  --error-color: #D32222;
+
+  // SECECT OPTION
+  --select-color: #000000;
+  --select-border: #DDDDDD;
+  --select-padding: 13px 16px;
+  --select-line-height: 1.429;
+  --select-font-size: 14px;
+  --select-bg: #ffffff;
+  --select-small-padding: 9px 13px;
+
+  // TEXTAREA
+  --textarea-color: #000000;
+  --textarea-border: #DDDDDD;
+  --textarea-padding: 9px 12px;
+  --textarea-line-height: 1.429;
+  --textarea-font-size: 14px;
+  --textarea-bg: #ffffff;
+
+  // BUTTON
+  --button-bg: #BA8751;
+  --button-text: #ffffff;
+  --button-font: 14px;
+  --button-font-responsive: 14px;
+  --button-line-height: 1.429;
+  --button-padding: 13px 20px;
+
+  --button-hover-bg: #9A6935;
+  --button-hover-text: #ffffff;
+
+  // BUTTON Transparent
+  --button-transparent-bg: #ffffff;
+  --button-transparent-text: #BA8751;
+  --transparent-button-border: #191919;
+
+  --button-transparent-hover-bg: #ffffff;
+  --button-transparent-hover-text: #9A6935;
+  --button-transparent-hover-border: #9A6935;
+
+  //BUTTON DISABLED
+  --button-disable-bg: #fafafa;
+  --button-disable-text: #8A8A8A;
+
+  // BUTTON SMALL
+  --button-small-padding: 7px 20px;
+  --button-small-line-height: 1.286;
+  --button-small-font: 14px;
+
+  // BUTTON X-SMALL
+  --button-xsmall-padding: 6px 14px;
+  --button-xsmall-line-height: 1.286;
+  --button-xsmall-font: 14px;
+
+  // LINK
+  --link-color: #191919;
+  --link-hover-color: #6C6C6C;
+
+  // FOOTER
+  --newsletter-bg: #F4F4F4;
+  --social-icon-color: #000000;
+  --copy-right-text: #6C6C6C;
+
+  // PRODUCT
+  --product-background-color: #F4F4F4;
+  --gray-200: #CCCCCC;
+  --gray-300: #EEEEEE;
+  --gray-500: #666666;
+  --gray-600: #999999;
+  --gray-800: #8B8B8B;
+
+  // ALERT MESSAGE
+  --alert-info-bg: #f4f4f4;
+
+  // ACCOUNT
+  --address-border-color: #e5e5e5;
+  --address-panel-bg: #f4f4f5;
+  --account-orderstatus-label: #bababa;
+  --close-icon-color: #eeeeee;
+
+  // PLACEHOLDER
+  --placeholder-track-color: #f1f1f1;
+  --placeholder-handle-color: #c1c1c1;
+  --placeholder-handle-hover-color: #787878;
+
+  --var-color: #000000;
+  --rating-star-color: #E7E7E7;
+  --rating-star-fill-color: #FFB800;
+
+}

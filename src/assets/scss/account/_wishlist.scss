@@ -1,0 +1,119 @@
+.wishlist-table {
+    max-width: 1120px;
+    margin: 30px auto;
+    width: 100%;
+
+    .table-head {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+    }
+
+    th,
+    td {
+        padding: 10px 0;
+        text-align: center;
+        @include font-medium;
+
+        +th,
+        +td {
+            padding-left: 20px;
+
+            @include x-small {
+                padding-left: 16px;
+            }
+        }
+
+        &:first-child {
+            padding-left: 20px;
+            padding-right: 0;
+            text-align: left;
+
+            @include x-small {
+                padding-left: 10px;
+            }
+        }
+
+        &:last-child {
+            padding-right: 20px;
+            text-align: right;
+
+            @include x-small {
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .table-actions {
+        .button {
+            +.button {
+                @include mobile {
+                    margin-left: 20px;
+                }
+
+                @include small {
+                    margin-left: 0;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}
+
+.wishlist-add {
+    .wishlist-form {
+        max-width: 550px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+.product-listing {
+    .cart-remove {
+        position: absolute;
+        right: 16px;
+        top: 0;
+        z-index: 99;
+        cursor: pointer;
+
+        &:hover {
+            .icon {
+                background: var(--primary-color);
+
+                svg {
+                    stroke: var(--white-color);
+                }
+            }
+        }
+
+        .icon {
+            border-radius: 50%;
+            height: 24px;
+            padding: 7px;
+            transition: all .4s ease;
+            width: 24px;
+            background: var(--close-icon-color);
+
+            svg {
+                stroke: var(--black-color);
+            }
+        }
+    }
+}
+
+//share-wishlist
+.wishlist-share-link {
+    background: var(--alert-info-bg);
+    padding: 20px 30px;
+    max-width: 650px;
+    margin: 0 auto 40px;
+
+    @include small{
+        max-width: 100%;
+    }
+
+    .share-link-item {
+        background: var(--gray-300);
+        border: 1px solid var(--black-color);
+        padding: 12px;
+    }
+}

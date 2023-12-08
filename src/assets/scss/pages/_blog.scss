@@ -1,0 +1,306 @@
+.blog-list-image {
+  aspect-ratio: 1/0.71;
+  border-radius: 7px;
+
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
+.blog-list-item {
+  @include mobile {
+    margin-bottom: 40px;
+  }
+}
+
+.blog-list-caption {
+
+  h5 {
+    @include tablet {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: var(--para-16);
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+}
+
+.blog-list-caption-inner {
+  padding-top: 30px;
+  background: var(--white-color);
+
+  @include tablet {
+    padding-top: 20px;
+  }
+
+  .posted {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.blog-list-author {
+  @include tablet {
+    @include font-small;
+  }
+}
+
+.blog-post-content {
+  @include all-heading {
+    margin-top: 40px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.blog-tags {
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.blog-post-page-template {
+  .breadcrumb-section {
+    margin-bottom: 80px;
+  }
+
+  .blog-list-item {
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  .blog-list-caption-inner {
+    padding-top: 0;
+    max-width: 730px;
+    margin: 0 auto;
+  }
+
+  .posted {
+    padding-left: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      height: 2px;
+      width: 8px;
+      background-color: var(--gray-200);
+      display: block;
+      left: 6px;
+    }
+  }
+
+  .author {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.blog-post {
+  @include mobile {
+    margin-top: 20px;
+  }
+
+  a {
+    &:hover {
+      .icon {
+        svg {
+          stroke: var(--link-hover-color);
+        }
+      }
+    }
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+
+    svg {
+      stroke: var(--secondary-color);
+    }
+  }
+}
+
+.category-post {
+  span {
+    +span {
+      margin-left: 10px;
+      padding-left: 10px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        height: 4px;
+        width: 4px;
+        background-color: var(--gray-800);
+        border-radius: 50%;
+        display: block;
+        left: -2px;
+      }
+    }
+  }
+}
+
+.latestBlog {
+  @include tablet {
+    margin-bottom: 60px;
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
+  .blog-list-item {
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.blog-category-list-item {
+  margin-right: 32px;
+
+  span {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+
+  a,
+  div {
+    cursor: pointer;
+    font-size: var(--para-16);
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.blog-category-list {
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .current-tab {
+
+    a,
+    div {
+      color: var(--primary-color);
+      @include font-medium;
+    }
+  }
+}
+
+.category-select {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.author {
+  padding-left: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    height: 2px;
+    width: 8px;
+    background-color: var(--gray-200);
+    display: block;
+    left: 6px;
+  }
+}
+
+.author,
+.posted {
+  span {
+    color: var(--gray-800);
+  }
+}
+
+
+//Blog-section
+.blog-section {
+  .banner-item {
+    .image-caption {
+      padding-top: 24px;
+
+      @include small {
+        padding-top: 16px;
+        padding-bottom: 24px;
+      }
+    }
+
+    &:nth-child(even) {
+      .blog-content {
+        @include small {
+          @include display-flex(flex);
+          @include flex-wrap(wrap);
+        }
+      }
+
+      .image-caption {
+        padding-top: 0;
+        padding-bottom: 24px;
+
+        @include small {
+          order: 2;
+          padding-top: 16px;
+          padding-bottom: 0;
+        }
+      }
+
+      .blog-image {
+        order: 1;
+      }
+    }
+  }
+
+  .heading-24 {
+    font-size: 24px;
+    margin-bottom: 16px;
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include small {
+      font-size: 16px;
+    }
+  }
+}
+
+//Blog Card style
+.blog-card{
+  .slick-slider{
+    .slick-arrow{
+      top: -45px;
+    }
+  }
+}

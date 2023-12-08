@@ -1,0 +1,96 @@
+.tab-list {
+  list-style: none;
+  border-bottom: 1px solid var(--input-border);
+
+  h6.tab-title {
+    font-size: 24px;
+    font-family: var(--primary-font);
+    text-transform: capitalize;
+    color: var(--secondary-color);
+    font-weight: var(--font-medium);
+    margin-bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33342 7.50004L8.82163 12.8587C9.46978 13.4916 10.5304 13.4916 11.1785 12.8587L16.6667 7.50004' stroke='%23191919' strokeWidth='1.5' strokeMiterlimit='10' strokeLinecap='round' strokeLinejoin='round'/%3E%3C/svg%3E%0A");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+
+  &.tab-active {
+    h6.tab-title {
+      color: var(--primary-color);
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6666 12.5L11.1784 7.14133C10.5302 6.50847 9.46962 6.50847 8.82147 7.14133L3.33325 12.5' stroke='%23191919' strokeWidth='1.5' strokeMiterlimit='10' strokeLinecap='round' strokeLinejoin='round'/%3E%3C/svg%3E%0A");
+    }
+  }
+}
+
+.tab-content-section {
+  color: var(--body-color);
+
+  @include mobile {
+    border: none;
+  }
+}
+
+.additional-info {
+  ul {
+    li {
+      @include display-flex(flex);
+      @include align-item(center);
+      @include justify-content(space-between);
+      margin-bottom: 16px;
+
+      @include mobile {
+        margin-bottom: 8px;
+        @include justify-content(flex-start);
+      }
+
+      &:last-child,
+      &:nth-last-of-type(2) {
+        margin-bottom: 0px;
+
+        @include mobile {
+          margin-bottom: 8px;
+        }
+      }
+
+      span {
+        width: 40%;
+        color: var(--gray-500);
+        line-height: 24px;
+        padding-right: 15px;
+
+        @include tablet {
+          font-size: var(--body-font);
+        }
+
+        @include mobile {
+          width: auto;
+          padding-right: 10px;
+        }
+
+        &:last-child {
+          padding-right: 0px;
+          width: 60%;
+
+          @include mobile {
+            width: auto;
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab-row {
+  @include tablet {
+    margin-bottom: 0px;
+  }
+}

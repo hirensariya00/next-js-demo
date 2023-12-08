@@ -1,0 +1,162 @@
+.page-body {
+  position: relative;
+  min-height: calc(100vh - 160px);
+}
+
+.page-header-section {
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  margin-top: 0;
+  position: relative;
+
+  @include mobile{
+    padding-bottom: 30px;
+  }
+}
+
+.breadcrumb-section{
+  + .page-header-section {
+    padding-top: 0;
+  }
+}
+
+.page-title {
+  margin-bottom: 0;
+  position: relative;
+  font-size: 40px;
+
+  @include mobile{
+    font-size: 26px;
+  }
+
+  &.color-white{
+    color: var(--white-color);
+  }
+}
+
+.section-title-outer {
+  margin-bottom: 40px;
+  @include justify-content(space-between);
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.page-sidebar {
+  width: 358px;
+
+  @include large{
+    width: 300px;
+  }
+  @include medium{
+    width: 270px;
+  }
+  @include tablet{
+    width: 100%;
+  }
+
+  + .page-content {
+    width: calc(100% - 358px);
+
+    @include large{
+      width: calc(100% - 300px);
+    }
+    @include medium{
+      width: calc(100% - 270px);
+    }
+    @include tablet{
+      width: 100%;
+    }
+  }
+}
+
+@import "page-sticky-sidebar";
+@import "sort-slide-bottom";
+
+// CUSTOM HEADER
+
+@keyframes header-sticky{
+  0% {
+      top: -100px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+body.sticky-header{
+  padding-top: 100px;
+  .header-top-section{
+    display: none;
+  }
+  .header-section{
+    animation-name: header-sticky;
+    animation-duration: 0.4s;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white-color);
+    @include box-shadow(-4px -4px 16px rgba(0, 0, 0, 0.12));
+  }
+}
+
+.page-type-ecommerce-category, .page-type-ecommerce-brand, body.home, body.page-with-landing-banner, .page-type-searchpage{
+  
+  &.sticky-header{
+    padding-top: 0;
+  }
+
+  .header-middle-inner{
+    border-bottom: none;
+  }
+
+  .page-header-section{
+    height: 520px;
+    @include display-flex(flex);
+    @include align-item(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+    background: var(--section-background-color);
+    position: relative;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    margin-bottom: 24px;
+
+    @include medium{
+      height: 350px;
+    }
+    @include tablet{
+      height: 300px;
+      margin-bottom: 20px;
+    }
+    @include mobile{
+      height: 280px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-bottom: 16px;
+    }
+  }
+  .page-title{
+    @include mobile{
+      font-size: 32px;
+    }
+  }
+}
+
+
+.page-type-searchpage{
+  .page-header-section{
+    height: auto;
+    padding-bottom: 0;
+    padding-top: 45px;
+    text-align: left;
+  }
+}

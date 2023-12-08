@@ -1,0 +1,340 @@
+// Set the grid defaults
+
+// -----------------------------------------------------------------------------
+$column-count: 12 !default;
+$gutter-size: 0.5rem !default;
+
+$x-large: 1630px; // xlg(1440 view)
+$large: 1439px; // lg(1280/1366 view)
+
+$medium: 1279px; // md(1024 view)
+$tablet: 1023px; // tab(768 view)
+
+$mobile: 767px; // mob(667 view)
+$small: 666px; // sm(480 view)
+$x-small: 479px; // xs(360 view)
+
+// Find the width of 1 column, based upon the column count
+// -----------------------------------------------------------------------------
+@function find_column_width($columns: $column-count) {
+  $column-width: calc(100% / $columns);
+  @return $column-width;
+}
+
+// Create a grid container to house the columns
+// -----------------------------------------------------------------------------
+@mixin grid($nested: false, $gutters: true) {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  @if $nested {
+    flex: 0 1 auto;
+  }
+}
+
+// Create a column of the grid
+// -----------------------------------------------------------------------------
+@mixin column(
+  $columns: 0,
+  $md: null,
+  $xlg: null,
+  $lg: null,
+  $tab: null,
+  $mob: null,
+  $sm: null,
+  $xs: null
+) {
+  $width: find_column_width();
+  $flex-basis: $width * $columns;
+
+  // Setting $columns = 0 will set the column to be auto width and fill available space
+  @if ($columns == 0) {
+    flex: 1 0 0;
+    width: auto;
+  } @else {
+    flex: 0 0 $flex-basis;
+    min-width: $flex-basis;
+  }
+
+  // Set the column width on x-small screens
+  @if ($xs != null) {
+    @media screen and (max-width: $x-small) {
+      $flex-basis: $width * $xs;
+      @if ($xs == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on small screens
+  @if ($sm != null) {
+    @media screen and (max-width: $small) {
+      $flex-basis: $width * $sm;
+      @if ($sm == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on mobile screens
+  @if ($mob != null) {
+    @media screen and (max-width: $mobile) {
+      $flex-basis: $width * $mob;
+      @if ($mob == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on tablet screens
+  @if ($tab != null) {
+    @media screen and (max-width: $tablet) {
+      $flex-basis: $width * $tab;
+      @if ($tab == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on medium screens
+  @if ($md != null) {
+    @media screen and (max-width: $medium) {
+      $flex-basis: $width * $md;
+      @if ($md == 0) {
+        flex: 1 0 0 ;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on large screens
+  @if ($lg != null) {
+    @media screen and (max-width: $large) {
+      $flex-basis: $width * $lg;
+      @if ($lg == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on x-large screens
+  @if ($xlg != null) {
+    @media screen and (max-width: $x-large) {
+      $flex-basis: $width * $xlg;
+      @if ($xlg == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+}
+
+// Create a column for a specific breakpoint
+// Never needed if purely using grid as mixins
+// -----------------------------------------------------------------------------
+@mixin mq-column($breakpoint: "md", $columns: 0) {
+  $width: find_column_width();
+  $flex-basis: $width * $columns;
+
+  @if ($breakpoint == "xs") {
+    @media screen and (max-width: $x-small) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  @if ($breakpoint == "sm") {
+    @media screen and (max-width: $small) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  @if ($breakpoint == "mob") {
+    @media screen and (max-width: $mobile) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  @if ($breakpoint == "tab") {
+    @media screen and (max-width: $tablet) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  @if ($breakpoint == "md") {
+    @media screen and (max-width: $medium) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  @if ($breakpoint == "lg") {
+    @media screen and (max-width: $large) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  @if ($breakpoint == "xlg") {
+    @media screen and (max-width: $x-large) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+}
+
+// Demo Styles
+
+.row{
+  @include grid();
+}
+// Make some base columns
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include column($i);
+  }
+}
+// Make some base columns for x-large
+@for $i from 1 through 12 {
+  .col-xlg-#{$i} {
+    @include mq-column("xlg", $i);
+  }
+}
+// Make some base columns for large
+@for $i from 1 through 12 {
+  .col-lg-#{$i} {
+    @include mq-column("lg", $i);
+  }
+}
+// Make some base columns for medium
+@for $i from 1 through 12 {
+  .col-md-#{$i} {
+    @include mq-column("md", $i);
+  }
+}
+// Make some base columns for tablet
+@for $i from 1 through 12 {
+  .col-tab-#{$i} {
+    @include mq-column("tab", $i);
+  }
+}
+// Make some base columns for mobile
+@for $i from 1 through 12 {
+  .col-mob-#{$i} {
+    @include mq-column("mob", $i);
+  }
+}
+// Make some base columns for mobile
+@for $i from 1 through 12 {
+  .col-sm-#{$i} {
+    @include mq-column("sm", $i);
+  }
+}
+// Make some base columns for mobile
+@for $i from 1 through 12 {
+  .col-xs-#{$i} {
+    @include mq-column("xs", $i);
+  }
+}
+
+// Media view based on breakpoint
+@mixin x-large {
+  @media screen and (max-width: $x-large) {
+    @content;
+  }
+}
+@mixin large {
+  @media screen and (max-width: $large) {
+    @content;
+  }
+}
+@mixin medium {
+  @media screen and (max-width: $medium) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin small {
+  @media screen and (max-width: $small) {
+    @content;
+  }
+}
+@mixin x-small {
+  @media screen and (max-width: $x-small) {
+    @content;
+  }
+}

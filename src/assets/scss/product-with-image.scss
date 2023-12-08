@@ -1,0 +1,43 @@
+.product-with-image-section {
+    .image-content {
+        height: 100%;
+    }
+    .product-image-main{
+        height: 100%;
+    }
+    .image-caption {
+        position: absolute;
+        top: 0;
+        padding: 50px;
+        width: 100%;
+        h4{
+            margin-bottom: 16px;
+        }
+        p{
+            color: var(--body-color);
+        }
+        @include medium{
+            padding: 30px;
+        }
+        @include x-small{
+            padding: 20px;
+        }
+    }
+    .product-card{
+        width: 50%;
+        margin-bottom: 0;
+        @include tablet{
+            margin-top: 16px;
+        }
+    }
+}
+
+.one-product-image{
+    .product-card{
+        width: 100%;
+        @include tablet{
+            margin-top: 0px;
+            margin-bottom: 16px;
+        }
+    }
+}

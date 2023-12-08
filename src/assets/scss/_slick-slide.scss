@@ -1,0 +1,227 @@
+.slick-slider {
+    opacity: 0;
+
+    &.slick-initialized {
+        opacity: 1;
+    }
+
+    .slick-slide {
+        display: block;
+    }
+
+    .slick-arrow {
+        z-index: 1;
+        width: 14px;
+        height: 31px;
+        @include transition(all 0.4s ease);
+
+        &.slick-disabled {
+            opacity: 0.3;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        svg {
+            fill: none;
+            stroke: #7c7c7c;
+            max-width: 100%;
+            max-height: 100%;
+            @include tablet {
+                max-height: 100%;
+            }
+        }
+
+        &:hover svg {
+            stroke: var(--black-color);
+        }
+    }
+
+    .slick-prev {
+        left: 30px;
+    }
+
+    .slick-next {
+        right: 30px;
+    }
+
+    .slick-dots {
+        width: 100%;
+        max-width: var(--container);
+        margin: 0;
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
+
+        @include large {
+            padding: 0 30px;
+        }
+
+        @include mobile {
+            padding: 0 15px;
+        }
+
+        > li {
+            width: auto;
+            height: auto;
+            margin: 0;
+
+            + li {
+                margin-left: 12px;
+            }
+
+            &.slick-active {
+                button {
+                    @include transition(all .6s ease-in-out);
+                    background-color: var(--secondary-color);
+                }
+            }
+
+            button {
+                width: 8px;
+                height: 8px;
+                padding: 0;
+                border: 1px solid var(--secondary-color);
+
+                &::before {
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: var(--secondary-color);
+                }
+            }
+        }
+    }
+
+    .slick-track {
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+// PAGINATION ALIGNMENT CONTROL CSS
+
+.pagination-right {
+    .slick-dots {
+        text-align: right;
+    }
+}
+
+.pagination-center {
+    .slick-dots {
+        text-align: center;
+    }
+}
+
+.pagination-left {
+    .slick-dots {
+        text-align: left;
+    }
+}
+
+.slick-dots{
+    display: none !important;
+}
+.pagination-show {
+    .slick-dots {
+        display: block !important;
+    }
+}
+
+// mobile view - Arrow position
+@include mobile {
+    .slick-mobile-top-arrow {
+        .slick-arrow {
+            &.slick-prev,
+            &.slick-next {
+                top: -42px;
+                transform: none;
+            }
+
+            &.slick-prev {
+                left: auto;
+                right: 45px;
+            }
+
+            &.slick-next {
+                left: auto;
+                right: 15px;
+            }
+
+            svg {
+                @include mobile {
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}
+
+// arrow potition top
+.slick-top-arrow {
+    .slick-arrow {
+        &.slick-prev,
+        &.slick-next {
+            @include transform(none);
+            top: -90px;
+
+            @include medium {
+                top: -85px;
+            }
+            @include tablet {
+                top: -68px;
+            }
+
+            // @include mobile {
+            //     top: -42px;
+            // }
+        }
+
+        &.slick-prev {
+            left: auto;
+            right: 45px;
+        }
+
+        &.slick-next {
+            left: auto;
+            right: 10px;
+        }
+
+        svg {
+            @include mobile {
+                padding: 2px;
+            }
+        }
+    }
+}
+
+// hide arrpw from mobile
+.mobile-hide-arrow {
+    .slick-arrow {
+        @include tablet {
+            display: none !important;
+        }
+    }
+}
+
+// quickview slider
+.product-image-section, .mobile-view-image-popup {
+    .slick-slider {
+        .slick-prev {
+            left: 40px;
+            @include mobile{
+                left: 20px;
+            }
+        }
+        .slick-next {
+            right: 40px;
+            @include mobile{
+                right: 20px;
+            }
+        }
+    }
+}

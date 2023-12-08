@@ -1,0 +1,322 @@
+/* ============ HEADING STYLE ============ */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  @include font-bold;
+  padding: 0;
+  color: var(--heading-color);
+  margin-bottom: 25px;
+  font-family: var(--secondary-font);
+  line-height: 1.35;
+
+  @include mobile {
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 64px;
+
+  @include x-large {
+    font-size: 60px;
+  }
+
+  @include large {
+    font-size: 56px;
+  }
+
+  @include medium {
+    font-size: 48px;
+  }
+
+  @include mobile {
+    font-size: 36px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 56px;
+
+  @include x-large {
+    font-size: 52px;
+  }
+
+  @include large {
+    font-size: 48px;
+  }
+
+  @include medium {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    font-size: 30px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 48px;
+
+  @include x-large {
+    font-size: 42px;
+  }
+
+  @include large {
+    font-size: 38px;
+  }
+
+  @include medium {
+    font-size: 32px;
+  }
+
+  @include mobile {
+    font-size: 26px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 40px;
+
+  @include x-large {
+    font-size: 38px;
+  }
+
+  @include large {
+    font-size: 34px;
+  }
+
+  @include medium {
+    font-size: 30px;
+  }
+
+  @include mobile {
+    font-size: 26px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 32px;
+
+  @include large {
+    font-size: 26px;
+  }
+
+  @include medium {
+    font-size: 22px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 18px;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+@include all-heading {
+  &.color-inherit {
+    color: inherit;
+  }
+}
+
+.heading-font-16 {
+  font-size: 16px;
+}
+
+.heading-font-20 {
+  font-size: 20px;
+}
+
+.heading-font-22 {
+  font-size: 22px;
+}
+
+.heading-font-24 {
+  font-size: 24px;
+}
+
+.heading-font-28 {
+  font-size: 28px;
+}
+
+.font-s-16 {
+  font-size: 16px;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+p {
+  font-size: inherit;
+  line-height: var(--body-line-height);
+  margin-bottom: var(--para-margin);
+
+  @include mobile {
+    margin-bottom: 15px;
+  }
+}
+
+big,
+.big {
+  font-size: var(--para-18);
+}
+
+
+.medium {
+  font-size: var(--para-16);
+}
+
+small,
+.small {
+  font-size: var(--para-14);
+}
+
+strong,
+b {
+  @include font-medium;
+}
+
+.link-primary {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+  cursor: pointer;
+  @include transition(color 0.4s ease);
+
+  &:hover {
+    color: var(--link-color);
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+/* ============ FONT WEIGHT CLASSES ============ */
+
+.font-normal {
+  @include font-normal;
+}
+
+.font-bold {
+  @include font-bold;
+}
+
+.font-medium {
+  @include font-medium;
+}
+
+
+/* ============ SECTION TITLE STYLING ============ */
+
+.section-title {
+  position: relative;
+  line-height: 1.2;
+  margin-bottom: 64px;
+
+  @include medium {
+    margin-bottom: 40px;
+  }
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
+
+  @include all-heading {
+    margin-bottom: 0;
+    line-height: 1.2;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    margin-top: 16px;
+    margin-bottom: 0;
+
+    @include mobile {
+      margin-top: 8px;
+    }
+  }
+}
+
+.page-content-style {
+  > {
+    @include all-heading {
+      margin-bottom: 16px;
+      margin-top: 40px;
+
+      @include mobile {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  strong,
+  b {
+    @include font-bold;
+  }
+
+  a {
+    color: var(--link-color);
+    @include transition(color 0.4s ease);
+
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+
+  ul {
+    li {
+      padding-left: 20px;
+      position: relative;
+      list-style: none;
+
+      &:before {
+        position: absolute;
+        content: "";
+        background-color: var(--theme-dark-primary-color);
+        width: 4px;
+        height: 4px;
+        left: 0;
+        top: 9px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

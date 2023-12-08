@@ -1,0 +1,21 @@
+.account-content {
+
+    .account-list {
+        margin-bottom: 30px;
+
+        .account-listitem {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .account-orderstatus {
+            float: right;
+            text-align: right;
+            color: var(--body-color);
+        }
+
+        .is-read{
+            color: var(--body-color);
+        }
+    }
+}

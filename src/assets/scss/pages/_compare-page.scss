@@ -1,0 +1,180 @@
+.compareTable {
+    border-top: 1px solid var(--border-color);
+    overflow-x: auto;
+
+    .card {
+        .card-figure {
+            position: relative;
+            background-color: var(--product-background-color);
+            aspect-ratio: 1;
+
+            .card-img-container {
+                height: 100%;
+
+                a {
+                    height: 100%;
+                    display: block;
+                    width: 100%;
+                }
+
+                img {
+                    max-height: 100%;
+                }
+            }
+
+            .compareTable-removeProduct {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                cursor: pointer;
+
+                .icon {
+                    width: 24px;
+                    height: 24px;
+                    padding: 7px;
+                    @include border-radius(50%);
+                    @include transition(all 0.4s ease);
+
+                    svg {
+                        stroke: var(--secondary-color);
+                    }
+                }
+
+                &:hover {
+                    .icon {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .card-title {
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 14px;
+        }
+
+        .card-body {
+            .card-text {
+                margin-bottom: 8px;
+            }
+        }
+
+        .price-section {
+            .price-item {
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .compareTable-row {
+        vertical-align: middle;
+
+        &.compare-description {
+            vertical-align: top;
+        }
+
+        &:first-child {
+
+            th,
+            td {
+                padding-top: 40px;
+                padding-bottom: 56px;
+            }
+        }
+
+        &:last-child {
+
+            th,
+            td {
+                border-bottom: none;
+            }
+        }
+
+        td,
+        th {
+            padding: 40px 12px;
+        }
+
+        .compareTable-heading {
+            width: 180px;
+            color: var(--secondary-color);
+        }
+
+        .compareTable-product,
+        .compareTable-item {
+            font-family: var(--primary-font);
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
+
+            @include tablet {
+                min-width: 220px;
+            }
+        }
+
+        .compareTable-action {
+            .button {
+                width: 100%;
+            }
+        }
+
+        .compare-info {
+            li {
+                @include display-flex(flex);
+                @include flex-wrap(wrap);
+
+                @include mobile {
+                    @include flex-direction(column);
+                }
+
+                .productView-info-name {
+                    margin-right: 5px;
+                }
+
+                .productView-info-value {
+                    word-break: break-all;
+                }
+
+                +li {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}
+
+.compareTable-headingText {
+    font-family: var(--primary-font);
+    @include font-medium;
+    font-size: 24px;
+
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
+.compareTable-item {
+    color: var(--body-color);
+
+    ul {
+        list-style-position: inherit;
+        padding-left: 16px;
+    }
+
+    @include mobile {
+        font-size: 14px;
+    }
+}
+
+.compare-clear {
+    span {
+        color: var(--link-color);
+
+        &:hover {
+            color: var(--link-hover-color);
+        }
+    }
+}

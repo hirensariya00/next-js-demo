@@ -1,0 +1,63 @@
+.account-body {
+    .addresslist {
+        .address {
+            @include x-small {
+                margin-bottom: 25px;
+            }
+        }
+
+        .panel {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--address-border-color);
+            display: block;
+            min-height: 280px;
+            padding: 20px 20px 70px;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .address-addnew {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .address-icon {
+            font-size: 50px;
+        }
+
+        .panel-body {
+            background: var(--address-panel-bg);
+            cursor: auto;
+        }
+
+        .address-details {
+            color: var(--secondary-color);
+
+            .address-label,
+            .address-description {
+                display: inline-block;
+            }
+
+            .address-label {
+                margin-right: 3px;
+            }
+        }
+
+        .form-address-actions {
+            .button {
+                +.button {
+                    margin-left: 14px;
+                }
+            }
+        }
+
+        .form-address-actions {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+    }
+}
