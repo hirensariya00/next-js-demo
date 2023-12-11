@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // import {ContentService} from 'experro-storefront';
 // import ExpLinkParser from '../../../utils/link-parser';
-// import ExpHeroCarouselController from './hero-carousel-contoller';
+import ExpHeroCarouselController from './hero-carousel-contoller';
 // import ExpLoadingPlaceholder from '../../common-components/loading-placeholder/loading-placeholder';
 // import {ExpImageParser} from '../../../utils/image-parser';
 // import {linkParserStyle} from '../../../utils/link-parser-style';
@@ -47,43 +47,42 @@ export interface ExpHeroCarouselProps {
  */
 
 const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
-    const {componentData} = props
-    // const {
-    //   autoPlayTime,
-    //   isShowPagination,
-    //   paginationPosition,
-    //   component_content,
-    //   isShowSubTitle,
-    //   isShowTitle,
-    //   titleTextPosition,
-    //   titleSize,
-    //   titleTextColor,
-    //   subTitleSize,
-    //   subTitleTextColor,
-    //   buttonColor,
-    //   buttonTextColor,
-    //   buttonHoverColor,
-    //   buttonTextHoverColor,
-    //   id,
-    //   isAutoPlay,
-    //   showSliderArrows,
-    // } = props;
-    //
-    // const {
-    //   contentModel,
-    //   componentDataDispatcher,
-    //   isRenderingOnServer,
-    //   sliderKey,
-    // } = ExpHeroCarouselController({
-    //   isAutoPlay,
-    //   component_content,
-    //   isShowSubTitle,
-    //   isShowTitle,
-    //   titleTextPosition,
-    //   titleSize,
-    //   subTitleSize,
-    //   id,
-    // });
+    // const {componentData} = props
+    const {
+        autoPlayTime,
+        isShowPagination,
+        paginationPosition,
+        componentData,
+        isShowSubTitle,
+        isShowTitle,
+        titleTextPosition,
+        titleSize,
+        titleTextColor,
+        subTitleSize,
+        subTitleTextColor,
+        buttonColor,
+        buttonTextColor,
+        buttonHoverColor,
+        buttonTextHoverColor,
+        id,
+        isAutoPlay,
+        showSliderArrows,
+    } = props;
+    const {
+        contentModel,
+        componentDataDispatcher,
+        isRenderingOnServer,
+        sliderKey,
+    } = ExpHeroCarouselController({
+        isAutoPlay,
+        componentData,
+        isShowSubTitle,
+        isShowTitle,
+        titleTextPosition,
+        titleSize,
+        subTitleSize,
+        id,
+    });
 
     // const {WIDGET_CHECK_TRUE} = expWidgetConstants;
     // const {componentData} = componentDataDispatcher;
@@ -158,12 +157,12 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
             {componentData?.id && (
                 <>
                     <style>
-                        {`#${'id'} .hero-carousel-section .hover_button_style.button_style:hover {
+                        {`#${id} .hero-carousel-section .hover_button_style.button_style:hover {
                 background-color: var(--button-hover-bg-color) !important;
 
                 color: var(--button-hover-color) !important;
               }
-               #${'id'} .hero-carousel-section .hover_button_style.button_style {
+               #${id} .hero-carousel-section .hover_button_style.button_style {
                 background-color: var(--button-bg-color) !important;
 
                 color: var(--button-color) !important;
@@ -292,7 +291,7 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
                                         // Add class contentRight with heroSlide for right side content
                                         <div
                                             key={index.toString()}
-                                            // className={`heroSlide ${titleTextPosition}`}
+                                            className={`heroSlide ${titleTextPosition}`}
                                             suppressHydrationWarning={true}>
                                             <div
                                                 className="heroSlideImage"
@@ -309,7 +308,7 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
                                                 className="heroSlideContent"
                                                 suppressHydrationWarning={true}>
                                                 <div
-                                                    // className={`heroSlideContentInner ${titleTextPosition}`}
+                                                    className={`heroSlideContentInner ${titleTextPosition}`}
                                                     suppressHydrationWarning={true}>
                                                     <p
                                                         className="uppercase"
@@ -320,13 +319,13 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
                                                     {
                                                         data?.slide_heading_et && (
                                                             <h2
-                                                                // className={`${titleSize}`}
-                                                                // style={{
-                                                                //     color:
-                                                                //         typeof titleTextColor === 'string'
-                                                                //             ? JSON.parse(titleTextColor).value
-                                                                //             : titleTextColor?.value,
-                                                                // }}
+                                                                className={`${titleSize}`}
+                                                                style={{
+                                                                    color:
+                                                                        typeof titleTextColor === 'string'
+                                                                            ? JSON.parse(titleTextColor).value
+                                                                            : titleTextColor?.value,
+                                                                }}
                                                                 dangerouslySetInnerHTML={{
                                                                     __html: data?.slide_heading_et,
                                                                 }}
@@ -337,12 +336,12 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
                                                         data?.slide_sub_heading_et && (
                                                             <p
                                                                 className={'sub-title'}
-                                                                // style={{
-                                                                //     color:
-                                                                //         typeof subTitleTextColor === 'string'
-                                                                //             ? JSON.parse(subTitleTextColor).value
-                                                                //             : subTitleTextColor?.value,
-                                                                // }}
+                                                                style={{
+                                                                    color:
+                                                                        typeof subTitleTextColor === 'string'
+                                                                            ? JSON.parse(subTitleTextColor).value
+                                                                            : subTitleTextColor?.value,
+                                                                }}
                                                                 dangerouslySetInnerHTML={{
                                                                     __html: data?.slide_sub_heading_et,
                                                                 }}

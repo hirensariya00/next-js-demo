@@ -33,19 +33,19 @@ export interface ExpCTABannerProps {
  */
 const ExpCTABanner = (props: ExpCTABannerProps) => {
     const {
-        // titleColor,
-        // tagLineTextColor,
-        // component_content,
-        // buttonTarget,
-        // buttonColor,
-        // buttonTextColor,
-        // buttonHoverColor,
-        // buttonTextHoverColor,
-        // showHeadingText,
-        // showTagLine,
-        // contentPosition,
-        // bannerType,
-        // id,
+        titleColor,
+        tagLineTextColor,
+        component_content,
+        buttonTarget,
+        buttonColor,
+        buttonTextColor,
+        buttonHoverColor,
+        buttonTextHoverColor,
+        showHeadingText,
+        showTagLine,
+        contentPosition,
+        bannerType,
+        id,
         componentData
     } = props;
     // const { CONTENT_LIBRARY, FREE_FORM } = expDataSourceConstants;
@@ -79,12 +79,12 @@ const ExpCTABanner = (props: ExpCTABannerProps) => {
             {componentData && (
                 <>
                     <style>
-                        {`#${"id"} .button.buttonStyle:hover {
+                        {`#${id} .button.buttonStyle:hover {
               background-color: var(--button-hover-bg-color) !important;
 
               color: var(--button-hover-color) !important;
             }
-              #${"id"} .button.buttonStyle {
+              #${id} .button.buttonStyle {
               background-color: var(--button-bg-color) !important;
 
               color: var(--button-color) !important;
@@ -129,7 +129,7 @@ const ExpCTABanner = (props: ExpCTABannerProps) => {
 
                                         {componentData.button_com.length > 0 && (
                                             componentData.button_com.map((item, index) => (
-                                                <button onClick={() => {
+                                                <button key={index} onClick={() => {
                                                     console.log('test', item?.button_target_es)
                                                 }}>{item.button_text_et}</button>
                                             ))

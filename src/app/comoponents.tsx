@@ -10,13 +10,15 @@ const Components = async () => {
     const $ = cheerio.load(
         JSON.parse(pageData.Data.content_epe)['cms-page-drop1']
     );
+    //@ts-ignore
     const contents = $('div').contents();
 
     let componentDetails = [];
     for (let i = 0; i < contents.length - 1; i++) {
         const detailsObject = {
             contentModalData: JSON.parse(JSON.parse(contents[i]?.attribs?.component_content)?.contentModel),
-            contentModelInternalName: JSON.parse(contents[i]?.attribs?.component_content)?.modelInternalName
+            contentModelInternalName: JSON.parse(contents[i]?.attribs?.component_content)?.modelInternalName,
+            props: contents[i]?.attribs
         }
         componentDetails.push(detailsObject)
     }
@@ -25,7 +27,8 @@ const Components = async () => {
         const result = await getRecordByVersion(item.contentModalData?.id, item.contentModelInternalName)
         return {
             [item.contentModelInternalName]: result.Data,
-            contentModelInternalName: item.contentModelInternalName
+            contentModelInternalName: item.contentModelInternalName,
+            props: item.props
         }
     }));
     return <>
@@ -33,10 +36,13 @@ const Components = async () => {
             data.map((item, index) => {
                 return item.contentModelInternalName === "hero_carousel" ?
                     <ExpHeroCarousel1
-                        componentData={item['hero_carousel']}/> : item.contentModelInternalName === "cta_banner" ? <>
+                        {...item.props}
+                        componentData={item['hero_carousel']}
+                    /> : item.contentModelInternalName === "cta_banner" ? <>
                         <ExpCTABanner
+                            {...item.props}
                             componentData={item['cta_banner']}/></> : item.contentModelInternalName === "zigzag_layout" ? <>
-                        <ExpZigZagBanner componentData={item['zigzag_layout']}/></> : <></>
+                        <ExpZigZagBanner {...item.props} componentData={item['zigzag_layout']}/></> : <></>
             })
         }
     </>

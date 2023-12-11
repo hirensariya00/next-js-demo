@@ -31,6 +31,11 @@ export interface ExpZigZagBannerProps {
  */
 const ExpZigZagBanner = (props: ExpZigZagBannerProps) => {
     const {
+        id,
+        titleSize,
+        titleColor,
+        tagLineColor,
+        backgroundColor,
         componentData
     } = props;
     const getImageUrl = (image: any) => {
@@ -42,18 +47,19 @@ const ExpZigZagBanner = (props: ExpZigZagBannerProps) => {
 
             }
         }
+        //@ts-ignore
         return imagesUrl.publicUrl
     }
 
     return (
         <>
             <style>
-                {`#${"id"} a.button.fill-button:hover {
+                {`#${id} a.button.fill-button:hover {
           background-color: var(--button-hover-bg-color) !important;
 
           color: var(--button-hover-color) !important;
         }
-          #${"id"} a.button.fill-button {
+          #${id} a.button.fill-button {
           background-color: var(--button-bg-color) !important;
 
           color: var(--button-color) !important;
@@ -95,11 +101,11 @@ const ExpZigZagBanner = (props: ExpZigZagBannerProps) => {
                                     <div className="banner-content-inner">
                                         <div className="banner-content-icon">
                                             {
-                                                componentData?.layout_image_emd.map((image) => <Image
-                                                    src={getImageUrl(image)}
-                                                    width={200}
-                                                    height={160}
-                                                    alt="Picture of the author"
+                                                componentData?.layout_image_emd.map((image, index) => <Image key={index}
+                                                                                                             src={getImageUrl(image)}
+                                                                                                             width={200}
+                                                                                                             height={160}
+                                                                                                             alt="Picture of the author"
                                                 />)
                                             }
                                             {/*{!!mappingObj?.logoImage?.length && (*/}
@@ -122,7 +128,7 @@ const ExpZigZagBanner = (props: ExpZigZagBannerProps) => {
                                                     ? componentData?.heading_et
                                                     : 'Add Title',
                                             }}
-                                            // className={`m-b-24 ${titleSize}`}
+                                            className={`m-b-24 ${titleSize}`}
                                         />
 
                                         <p
@@ -159,8 +165,9 @@ const ExpZigZagBanner = (props: ExpZigZagBannerProps) => {
                                     <div className="has-image-fill banner-image-1 scale-img">
                                         {componentData.layout_button_com.length > 0 && (
                                             componentData.layout_button_com.map((item, index) => (
-                                                <button onClick={() => {
-                                                }}>{<>{console.log(item)}</>}{item.button_text_et}</button>
+                                                <button key={index} onClick={() => {
+                                                    console.log('test', item)
+                                                }}>{item.button_text_et}</button>
                                             ))
                                         )
 
