@@ -1,0 +1,22 @@
+.brand-carousal-section {
+  background-color: var(--black-color);
+  padding: 56px 0;
+  overflow: hidden;
+
+  .brand-image {
+    img {
+      max-height: 88px;
+      margin: auto;
+      max-width: 90%;
+    }
+  }
+  @include mobile {
+    padding: 32px 0;
+  }
+
+  .slick-list .slick-track {
+    @include display-flex(flex);
+    @include align-item(center);
+    @include justify-content(center);
+  }
+}

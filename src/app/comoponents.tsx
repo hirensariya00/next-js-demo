@@ -4,11 +4,14 @@ import {getRecordBySlug, getRecordByVersion} from '../services/get-record-data'
 import {ExpHeroCarousel1} from '../components/hero-carousel-1'
 import ExpCTABanner from "@/components/cta-banner-1/cta-banner-v1";
 import ExpZigZagBanner from "@/components/zig-zag-banner-1/zig-zag-banner"
+import {ExpBrandLogoGrid} from "@/components/logo-grid-component";
 
 const Components = async () => {
     const pageData = await getRecordBySlug(`https://excore-bigcommerce-demo.experro.com/apis/content/v1/collection/find-by-slug?page_slug=/&version_id=a2858bac-0d04-4e52-a2f6-43863c193129-72`)
+
     const $ = cheerio.load(
-        JSON.parse(pageData.Data.content_epe)['cms-page-drop1']
+        JSON.parse(pageData.Data.content_epe)['cms-page-drop1'],
+        JSON.parse(pageData.Data.content_epe)['cms-page-drop2']
     );
     //@ts-ignore
     const contents = $('div').contents();
@@ -42,10 +45,12 @@ const Components = async () => {
                         <ExpCTABanner
                             {...item.props}
                             componentFieldData={item['cta_banner']}/></> : item.contentModelInternalName === "zigzag_layout" ? <>
-                        <ExpZigZagBanner {...item.props} componentFieldData={item['zigzag_layout']}/></> : <></>
+                        <ExpZigZagBanner {...item.props}
+                                         componentFieldData={item['zigzag_layout']}/></> : item.contentModelInternalName === "brand_logo" ? <>
+                        <ExpBrandLogoGrid {...item.props} componentFieldData={item['brand_logo']}/></> : <></>
             })
         }
     </>
 }
 
-    export default Components;
+export default Components;
