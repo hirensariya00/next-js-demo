@@ -1,6 +1,6 @@
 /* eslint-disable no-script-url */
 import {ContentService} from '../services/content-service';
-// import Link from 'next/link'
+import Link from 'next/link'
 
 const IsCMSApp = true
 const parseLink = (to: string) => {
@@ -62,18 +62,17 @@ const ExpLinkParser = ({
             {!dangerouslySetInnerHTML ? (
                 <>
                     {!isExternalLink && IsCMSApp && link !== 'javascript:void(0)' ? (
-                        <></>
-                        // <Link
-                        //     style={style}
-                        //     id={id}
-                        //     title={title}
-                        //     aria-label={ariaLabel}
-                        //     rel={rel}
-                        //     className={className}
-                        //     target={target}
-                        //     to={ContentService.parseVariableValue(link)}>
-                        //     {children}
-                        // </Link>
+                        <Link
+                            style={style}
+                            id={id}
+                            title={title}
+                            aria-label={ariaLabel}
+                            rel={rel}
+                            className={className}
+                            target={target}
+                            to={ContentService.parseVariableValue(link)}>
+                            {children}
+                        </Link>
                     ) : (
                         <a
                             id={id}
@@ -95,22 +94,22 @@ const ExpLinkParser = ({
                     IsCMSApp &&
                     link !== 'javascript:void(0)' &&
                     !link.startsWith('#') ? (
-                        <></>
-                        // <Link
-                        //     id={id}
-                        //     style={style}
-                        //     title={title}
-                        //     className={className}
-                        //     aria-label={ariaLabel}
-                        //     target={target}
-                        //     rel={rel}
-                        //     to={ContentService.parseVariableValue(link)}
-                        //     dangerouslySetInnerHTML={{
-                        //         __html: ContentService.parseVariableValue(
-                        //             dangerouslySetInnerHTML?.__html
-                        //         ),
-                        //     }}
-                        // />
+                        <Link
+                            href={ContentService.parseVariableValue(link)}
+                            id={id}
+                            style={style}
+                            title={title}
+                            className={className}
+                            aria-label={ariaLabel}
+                            target={target}
+                            rel={rel}
+                            to={ContentService.parseVariableValue(link)}
+                            dangerouslySetInnerHTML={{
+                                __html: ContentService.parseVariableValue(
+                                    dangerouslySetInnerHTML?.__html
+                                ),
+                            }}
+                        />
                     ) : (
                         <a
                             id={id}

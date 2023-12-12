@@ -144,7 +144,7 @@ const ExpHeroCarousel1 = (props: ExpHeroCarouselProps) => {
                 : null;
 
         if (imageData?.imageUrl) {
-            return imageData?.imageUrl;
+            return `${imageData?.imageUrl}?width=1920`;
         } else {
             return null;
         }
