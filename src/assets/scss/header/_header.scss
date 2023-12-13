@@ -114,7 +114,6 @@
   max-width: 100%;
   z-index: 5;
   @include transition(all 0.2s ease);
-
   @include tablet {
     padding: 20px 0;
   }
@@ -135,7 +134,12 @@
 
 .header-middle-inner {
   border-bottom: 1px solid var(--border-color);
-
+> .row{
+  min-height: 62px;
+  @include  tablet{
+    min-height: auto;
+  }
+}
   @include tablet {
     border-bottom: none;
   }
