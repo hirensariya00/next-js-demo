@@ -5,23 +5,32 @@ import {ExpHeroCarousel1} from '../components/hero-carousel-1'
 import ExpCTABanner from "@/components/cta-banner-1/cta-banner-v1";
 import ExpZigZagBanner from "@/components/zig-zag-banner-1/zig-zag-banner"
 import {ExpBrandLogoGrid} from "@/components/logo-grid-component";
+import {ExpUSPBanner} from '../components/usp-banner'
 
 const Components = async () => {
-    const pageData = await getRecordBySlug(`https://excore-bigcommerce-demo.experro.com/apis/content/v1/collection/find-by-slug?page_slug=/&version_id=a2858bac-0d04-4e52-a2f6-43863c193129-72`)
+    const pageData = await getRecordBySlug(`https://excore-bigcommerce-demo.experro.com/apis/content/v1/collection/find-by-slug?page_slug=/`)
 
-    const $ = cheerio.load(
-        JSON.parse(pageData.Data.content_epe)['cms-page-drop1'],
+    const data1 = cheerio.load(
+        JSON.parse(pageData.Data.content_epe)['cms-page-drop1']
+    );
+    const data2 = cheerio.load(
         JSON.parse(pageData.Data.content_epe)['cms-page-drop2']
     );
-    //@ts-ignore
-    const contents = $('div').contents();
-
     let componentDetails = [];
-    for (let i = 0; i < contents.length - 1; i++) {
+    for (let i = 0; i < data1('div').contents().length; i++) {
         const detailsObject = {
-            contentModalData: JSON.parse(JSON.parse(contents[i]?.attribs?.component_content)?.contentModel),
-            contentModelInternalName: JSON.parse(contents[i]?.attribs?.component_content)?.modelInternalName,
-            props: contents[i]?.attribs
+            contentModalData: JSON.parse(JSON.parse(data1('div').contents()[i]?.attribs?.component_content)?.contentModel),
+            contentModelInternalName: JSON.parse(data1('div').contents()[i]?.attribs?.component_content)?.modelInternalName,
+            props: data1('div').contents()[i]?.attribs
+        }
+        componentDetails.push(detailsObject)
+    }
+
+    for (let i = 0; i < data2('div').contents().length; i++) {
+        const detailsObject = {
+            contentModalData: JSON.parse(JSON.parse(data2('div').contents()[i]?.attribs?.component_content)?.contentModel),
+            contentModelInternalName: JSON.parse(data2('div').contents()[i]?.attribs?.component_content)?.modelInternalName,
+            props: data2('div').contents()[i]?.attribs
         }
         componentDetails.push(detailsObject)
     }
@@ -47,7 +56,9 @@ const Components = async () => {
                             componentFieldData={item['cta_banner']}/></> : item.contentModelInternalName === "zigzag_layout" ? <>
                         <ExpZigZagBanner {...item.props}
                                          componentFieldData={item['zigzag_layout']}/></> : item.contentModelInternalName === "brand_logo" ? <>
-                        <ExpBrandLogoGrid {...item.props} componentFieldData={item['brand_logo']}/></> : <></>
+                        <ExpBrandLogoGrid {...item.props}
+                                          componentFieldData={item['brand_logo']}/></> : item.contentModelInternalName === "usp_banner" ? <>
+                        <ExpUSPBanner {...item.props} componentFieldData={item['usp_banner']}/></> : <></>
             })
         }
     </>

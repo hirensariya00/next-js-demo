@@ -1,0 +1,93 @@
+.usp-banner {
+  h4 {
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+  .usp-space {
+    @include justify-content(space-between);
+
+    @include medium {
+      @include justify-content(center);
+    }
+
+    @include mobile {
+      @include flex-wrap(wrap);
+      overflow-x: scroll;
+    }
+  }
+
+  .usp-item {
+    width: 20%;
+
+    @include tablet {
+      width: 33.33%;
+      margin: 0;
+      padding: 25px 10px;
+      @include display-flex(flex);
+      @include flex-direction(column);
+      @include align-item(center);
+      @include justify-content(center);
+    }
+
+    @include x-small {
+      width: 50%;
+      margin: 0;
+      padding: 20px 10px;
+      @include display-flex(flex);
+      @include flex-direction(column);
+      @include align-item(center);
+    }
+
+    a {
+      @include medium {
+        @include flex-direction(column);
+        @include align-item(center);
+      }
+      @include mobile {
+        @include justify-content(center);
+      }
+    }
+  }
+}
+
+.usp-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+
+  @include mobile {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.usp-name {
+  max-width: 100%;
+
+  @include medium {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  p {
+    color: var(--body-secondary-color);
+    font-weight: var(--font-normal);
+    font-size: var(--para-16);
+
+    @include medium {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
