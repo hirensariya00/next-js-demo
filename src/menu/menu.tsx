@@ -82,14 +82,14 @@ const ExpMenu = (props: ExpMenuInterface) => {
                                 {!!menuItem.children.length && iconForNavChild}
                             </div>
                         ) : !menuItem.isNull ? (
-                            <a
+                            <Link
                                 href={ContentService.parseVariableValue(menuItem?.redirectLink)}
                                 className={linkNameClasses}
                                 target={menuItem?.link_target === 'New Tab' ? '_blank' : ''}
                                 rel="noreferrer">
                                 {getMenuNameToShow(menuItem)}
                                 {iconForNavChild}
-                            </a>
+                            </Link>
                         ) : (
                             <div
                                 className="link-wrap"

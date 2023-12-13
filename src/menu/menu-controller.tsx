@@ -36,7 +36,7 @@ const ExpMenuController = (props: ExpMenuControllerProps) => {
     // Function to get the Menu Data from Admin panel with the help of the menu-id
     const getMenuObj = useCallback(async () => {
         if (menuLinkObj && menuId) {
-            const menuDataResponse = await getMenuData();
+            const menuDataResponse = await getMenuData(menuId);
             if (menuDataResponse.Status === 'success') {
                 setMenuData(menuDataResponse?.Data?.item?.content_ej);
             }
