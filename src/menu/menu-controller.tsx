@@ -2,7 +2,7 @@
 
 import {useCallback, useEffect, useState} from 'react';
 import {CommonUtilities} from '../utilities';
-import {ContentService} from '../services/content-service'
+// import {ContentService} from '../services/content-service'
 import {getMenuData} from "@/app/_menu-data";
 
 interface ExpMenuControllerProps {
@@ -38,7 +38,7 @@ const ExpMenuController = (props: ExpMenuControllerProps) => {
         if (menuLinkObj && menuId) {
             const menuDataResponse = await getMenuData(menuId);
             if (menuDataResponse.Status === 'success') {
-                setMenuData(menuDataResponse?.Data?.item?.content_ej);
+                setMenuData([...menuDataResponse?.Data?.item?.content_ej]);
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -74,6 +74,7 @@ const ExpMenu = (props: ExpMenuInterface) => {
                                 className="link-wrap"
                                 onClick={() => toggleMenuWithChild(menuItem?.id)}>
                                 <Link
+                                    prefetch={false}
                                     href={ContentService.parseVariableValue(menuItem?.redirectLink)}
                                     className={linkNameClasses}
                                     target={menuItem?.link_target === 'New Tab' ? '_blank' : ''}>
@@ -83,6 +84,7 @@ const ExpMenu = (props: ExpMenuInterface) => {
                             </div>
                         ) : !menuItem.isNull ? (
                             <Link
+                                prefetch={false}
                                 href={ContentService.parseVariableValue(menuItem?.redirectLink)}
                                 className={linkNameClasses}
                                 target={menuItem?.link_target === 'New Tab' ? '_blank' : ''}
