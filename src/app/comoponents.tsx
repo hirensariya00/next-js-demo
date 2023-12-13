@@ -6,6 +6,7 @@ import ExpCTABanner from "@/components/cta-banner-1/cta-banner-v1";
 import ExpZigZagBanner from "@/components/zig-zag-banner-1/zig-zag-banner"
 import {ExpBrandLogoGrid} from "@/components/logo-grid-component";
 import {ExpUSPBanner} from '../components/usp-banner'
+import {ExpProductCard} from "@/components/product-card";
 
 const Components = async () => {
     const pageData = await getRecordBySlug(`https://excore-bigcommerce-demo.experro.com/apis/content/v1/collection/find-by-slug?page_slug=/`)
@@ -58,7 +59,9 @@ const Components = async () => {
                                          componentFieldData={item['zigzag_layout']}/></> : item.contentModelInternalName === "brand_logo" ? <>
                         <ExpBrandLogoGrid {...item.props}
                                           componentFieldData={item['brand_logo']}/></> : item.contentModelInternalName === "usp_banner" ? <>
-                        <ExpUSPBanner {...item.props} componentFieldData={item['usp_banner']}/></> : <></>
+                        <ExpUSPBanner {...item.props}
+                                      componentFieldData={item['usp_banner']}/></> : item.contentModelInternalName === "product_set" ? <>
+                        <ExpProductCard {...item.props} componentFieldData={item['product_set']}/></> : <></>
             })
         }
     </>

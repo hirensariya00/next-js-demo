@@ -1,0 +1,33 @@
+.product-set-outer-section{
+    overflow: hidden;
+
+    .section-title{
+        @include tablet{
+            margin-bottom: 40px;
+        }
+        @include mobile{
+            margin-bottom: 25px;
+        }
+    }
+}
+.product-set-section{
+    @include mobile{
+        overflow: hidden;
+    }
+    .slick-slider{
+        .product-card{
+            width: 100%;
+            margin-bottom: 0;
+
+            .card-inner{
+                margin: 2px 0;
+            }
+        }   
+    }
+
+    .slick-list{
+        @include mobile{
+            width: 120vw;
+        }
+    }
+}
