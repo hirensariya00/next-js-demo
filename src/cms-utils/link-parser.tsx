@@ -63,6 +63,7 @@ const ExpLinkParser = ({
                 <>
                     {!isExternalLink && IsCMSApp && link !== 'javascript:void(0)' ? (
                         <Link
+                            href={ContentService.parseVariableValue(link)}
                             style={style}
                             id={id}
                             title={title}

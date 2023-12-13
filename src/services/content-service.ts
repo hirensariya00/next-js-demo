@@ -1,7 +1,7 @@
 //@ts-nocheck
 
 import {CommonUtilities, Http} from '../utilities';
-import DOMPurify from 'dompurify';
+// import DOMPurify from 'dompurify';
 import {getUIBuilderMediaHost, getAppMediaHost} from '../utilities/get-media-hostname';
 
 interface GetPageDataRequest {
@@ -68,15 +68,17 @@ export class ContentService {
             pageSlug = pageSlug + '/';
             window.location.pathname = pageSlug;
         }
-        const urlParams = new URLSearchParams(window.location.search);
-        const appendQuery = urlParams.get('aq');
+        // const urlParams = new URLSearchParams(window.location.search);
+        // const appendQuery = urlParams.get('aq');
+        const appendQuery = '';
 
         let url = `/apis/content/v1/collection/find-by-slug?page_slug=${pageSlug}`;
         if (versionId) {
             url += `&version_id=${versionId}`;
         }
         if (appendQuery === 'true') {
-            url += `&isAuto=true&searchTerm=${urlParams.get('st')}`
+            // url += `&isAuto=true&searchTerm=${urlParams.get('st')}`
+            url += `&isAuto=true&searchTerm=${''}`
         }
         const response = await Http.get({
             key: 'page',
